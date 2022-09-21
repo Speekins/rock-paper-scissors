@@ -1,4 +1,55 @@
 * {
-  font-family: 'Bungee Spice', cursive;
-font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: 'Bungee Inline', cursive;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  height: 100vh;
+  width: auto;
+  background-color: #f0788c;
+}
+
+.player-scoreboard {
+  grid-column-start: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f14562;
+}
+
+.game-area {
+  grid-column-start: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.computer-scoreboard {
+  grid-column-start: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f14562;
+}
+
+.fighters {
+ display: flex;
+ justify-content: space-evenly;
+ width: 100%;
+ height: auto;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 1px;
+}
+
+img {
+  height: 200px;
+ width: auto;
 }
