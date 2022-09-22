@@ -14,12 +14,12 @@ class Game {
     (human.choice === 'scissors' && (computer.choice === 'paper' || computer.choice === 'lizard')) ||
     (human.choice === 'alien' && (computer.choice === 'scissors' || computer.choice === 'rock')) ||
     (human.choice === 'lizard' && (computer.choice === 'paper' && computer.choice === 'alien')) ){
-      human.gamesWon += 1;
+      human.score += 1;
       return 'You won!'
     } else if (human.choice === computer.choice) {
       return 'It\'s a tie!';
     } else {
-      computer.gamesWon += 1;
+      computer.score += 1;
       return 'Computer won!'
     }
   }

@@ -1,7 +1,7 @@
 class Player {
   constructor(name, icon) {
     this.name = name || 'player';
-    this.gamesWon = 0;
+    this.score = 0;
     this.fighters = ['rock', 'paper', 'scissors'];
     this.choice;
     this.icon = icon || '😀';

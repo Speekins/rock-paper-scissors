@@ -6,12 +6,19 @@ var fighterSection = document.getElementById('fighter-section');
 var choicesSection = document.getElementById('show-choices-section');
 var fightersList = document.getElementsByClassName('fighter');
 var gameMessage = document.getElementById('game-message');
+var computerScore = document.getElementById('computer-score');
+var playerScore = document.getElementById('player-score');
+var playerIcon = document.getElementById('player-icon');
+var changeGameButton = document.getElementById('change-game-button');
 
 //Event Listeners
 fighterSection.addEventListener('click', function(event) {
   currentGame.updateChoices(event.target.id);
   gameMessage.innerText = currentGame.determineWinner();
+  playerIcon.innerText = currentGame.players[0].icon;
   displayWin();
+  updateScore();
+  show(changeGameButton);
 })
 
 //Main Script
@@ -35,4 +42,9 @@ function displayWin() {
       }
     }
   }
+}
+
+function updateScore() {
+  playerScore.innerText = currentGame.players[0].score;
+  computerScore.innerText = currentGame.players[1].score;
 }
