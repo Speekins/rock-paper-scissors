@@ -10,19 +10,35 @@ main {
   background-color: #f0788c;
 }
 
+.game-area {
+  grid-column-start: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-area-header {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.game-area-header h1 {
+  margin-bottom: 0;
+  font-size: 60px;
+}
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .player-scoreboard {
   grid-column-start: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #f14562;
-}
-
-.game-area {
-  grid-column-start: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .computer-scoreboard {
@@ -33,6 +49,34 @@ main {
   background-color: #f14562;
 }
 
+.score-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 50%;
+  width: auto;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.score-display h1 {
+  transform: scale(2);
+}
+
+.change-game-button {
+  width: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  transition-duration: 300ms;
+}
+
+.change-game-button:hover {
+  transform: scale(1.1);
+  box-shadow: 3px 3px 5px black;
+}
+
 .fighters {
  display: flex;
  justify-content: space-evenly;
@@ -40,16 +84,11 @@ main {
  height: auto;
 }
 
-h1 {
-  font-size: 60px;
-}
-
-h2 {
-  font-size: 4cd /0px;
-  margin-bottom: 1px;
-}
-
 img {
   height: 200px;
- width: auto;
+  width: auto;
+}
+
+.hidden {
+  display: none;
 }
