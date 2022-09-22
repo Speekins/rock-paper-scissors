@@ -70,6 +70,7 @@ main {
   padding-bottom: 10px;
   border: none;
   transition-duration: 300ms;
+  animation: fadeIn 2s;
 }
 
 .change-game-button:hover {
@@ -103,4 +104,13 @@ img:hover {
 
 .hidden {
   display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
 }
