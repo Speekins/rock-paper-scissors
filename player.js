@@ -1,6 +1,6 @@
 class Player {
   constructor(name) {
-    this.name = name;
+    this.name = name || 'player';
     this.gamesWon = 0;
     this.fighters = ['rock', 'paper', 'scissors'];
     this.choice;
@@ -23,4 +23,10 @@ class Player {
       this.fighters = ['rock', 'paper', 'scissors'];
     }
   }
+
+  updateChoice(choice) {
+    this.choice = choice;
+  }
 }
+
+module.exports = Player;
