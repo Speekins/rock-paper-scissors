@@ -30,19 +30,7 @@
             <img src="./assets/happy-alien.png" alt="happy alien" class="fighter hidden" id="alien">
             <img src="./assets/iguana.png" alt="lizard" class="fighter hidden" id="lizard">
           </div>
-          <div class="game-card hidden" id="classic-game">
-            <p>Rock > Scissors</p>
-            <p>Paper > Rock</p>
-            <p>Scissors > Paper</p>
-          </div>
           <div class="show-choices-section hidden" id="show-choices-section">
-          </div>
-          <div class="game-card hidden" id="enhanced-game">
-            <p>Rock > Scissors & Lizard</p>
-            <p>Paper > Rock & Alien</p>
-            <p>Scissors > Paper & Lizard</p>
-            <p>Lizard > Paper & Alien</p>
-            <p>Alien > Scissors & Rock</p>
           </div>
         </section>
         <section class="computer-scoreboard">
@@ -51,7 +39,21 @@
             <h2>Computer</h2>
             <p>Wins: <span class="score" id="computer-score">0</span></p>
           </div>
-        </section> 
+        </section>
+        <section class="game-card-section hidden" id="game-card-section">
+          <div class="game-card" id="classic-game">
+            <p>Rock > Scissors</p>
+            <p>Paper > Rock</p>
+            <p>Scissors > Paper</p>
+          </div>
+          <div class="game-card" id="enhanced-game">
+            <p>Rock > Scissors & Lizard</p>
+            <p>Paper > Rock & Alien</p>
+            <p>Scissors > Paper & Lizard</p>
+            <p>Lizard > Paper & Alien</p>
+            <p>Alien > Scissors & Rock</p>
+          </div>
+        </section>
     </main>
 	  <script src="player.js"></script>
     <script src="game.js"></script>

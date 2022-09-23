@@ -24,12 +24,16 @@ fighterSection.addEventListener('click', function(event) {
 })
 
 //Main Script
-function hide(element) {
-  element.classList.add('hidden');
+function hide(...elements) {
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].classList.add('hidden');
+  }
 }
 
-function show(element) {
-  element.classList.remove('hidden');
+function show(...elements) {
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].classList.remove('hidden');
+  }
 }
 
 function displayWin() {
@@ -68,4 +72,8 @@ function resetGameDisplay() {
   hide(choicesSection);
   choicesSection.innerHTML = '';
   gameMessage.innerText = 'Choose your fighter!';
+}
+
+function showStartSection() {
+  
 }
