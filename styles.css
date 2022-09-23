@@ -106,11 +106,37 @@ img:hover {
   display: none;
 }
 
+.winner {
+  animation: sizeUp 3s;
+}
+
+.loser {
+  animation: fadeOut 3s;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0%;
   }
   to {
     opacity: 100%;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 100%
+  }
+  to {
+    opacity: 50%;
+  }
+}
+
+@keyframes sizeUp {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
   }
 }
