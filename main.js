@@ -3,13 +3,17 @@ var currentGame = new Game();
 var winnerMessage;
 
 //Query Selectors
+var gameArea = document.getElementById('game-area');
 var fighterSection = document.getElementById('fighter-section');
 var choicesSection = document.getElementById('show-choices-section');
+var computerScoreboard = document.querySelector('.computer-scoreboard');
+var playerScoreboard = document.querySelector('.player-scoreboard');
 var fightersList = document.getElementsByClassName('fighter');
 var gameMessage = document.getElementById('game-message');
 var computerScore = document.getElementById('computer-score');
 var playerScore = document.getElementById('player-score');
 var playerIcon = document.getElementById('player-icon');
+var gameCardSection = document.getElementById('game-card-section');
 var changeGameButton = document.getElementById('change-game-button');
 
 //Event Listeners
@@ -23,14 +27,18 @@ fighterSection.addEventListener('click', function(event) {
   setTimeout(resetGameDisplay, 3000);
 })
 
+changeGameButton.addEventListener('click', showStartSection);
+
 //Main Script
 function hide(...elements) {
+  console.log(elements);
   for (var i = 0; i < elements.length; i++) {
     elements[i].classList.add('hidden');
   }
 }
 
 function show(...elements) {
+  console.log(elements);
   for (var i = 0; i < elements.length; i++) {
     elements[i].classList.remove('hidden');
   }
@@ -64,7 +72,6 @@ function highlightWinner(element, index) {
 function updateScore() {
   playerScore.innerText = currentGame.players[0].score;
   computerScore.innerText = currentGame.players[1].score;
-  console.log(currentGame.players[0].score)
 }
 
 function resetGameDisplay() {
@@ -75,5 +82,6 @@ function resetGameDisplay() {
 }
 
 function showStartSection() {
-  
+  hide(gameArea, computerScoreboard, playerScoreboard);
+  show(gameCardSection);
 }
