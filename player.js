@@ -15,11 +15,11 @@ class Player {
     this.choice = this.fighters[randomIndex];
   }
 
-  changeFighters() {
-    if (this.fighters.length === 3){
-    this.fighters = ['spock', 'rock', 'paper', 'scissors', 'lizard'];
-    } else {
-      this.fighters = ['rock', 'paper', 'scissors'];
+  changeFighters(gameType) {
+    if (gameType === 'classic'){
+    this.fighters = ['rock', 'paper', 'scissors'];
+    } else if (gameType === 'enhanced') {
+      this.fighters = ['alien', 'rock', 'paper', 'scissors', 'lizard'];
     }
   }
 

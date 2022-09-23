@@ -13,8 +13,10 @@ var gameMessage = document.getElementById('game-message');
 var computerScore = document.getElementById('computer-score');
 var playerScore = document.getElementById('player-score');
 var playerIcon = document.getElementById('player-icon');
-var gameCardSection = document.getElementById('game-card-section');
+var gameTypeSection = document.getElementById('game-type-section');
 var changeGameButton = document.getElementById('change-game-button');
+var alien = document.getElementById('alien');
+var lizard = document.getElementById('lizard');
 
 //Event Listeners
 fighterSection.addEventListener('click', function(event) {
@@ -29,16 +31,27 @@ fighterSection.addEventListener('click', function(event) {
 
 changeGameButton.addEventListener('click', showStartSection);
 
+gameTypeSection.addEventListener('click', function(event) {
+  if (event.target.id === 'classic-game') {
+    console.log(event.target.id)
+    currentGame.changeGameMode('classic');
+    show(gameArea, computerScoreboard, playerScoreboard);
+    hide(alien, lizard);
+  } else if (event.target.id === 'enhanced-game') {
+    currentGame.changeGameMode('enhanced');
+    show(gameArea, computerScoreboard, playerScoreboard, alien, lizard);
+  }
+  hide(gameTypeSection);
+})
+
 //Main Script
 function hide(...elements) {
-  console.log(elements);
   for (var i = 0; i < elements.length; i++) {
     elements[i].classList.add('hidden');
   }
 }
 
 function show(...elements) {
-  console.log(elements);
   for (var i = 0; i < elements.length; i++) {
     elements[i].classList.remove('hidden');
   }
@@ -49,7 +62,7 @@ function displayWin() {
   show(choicesSection);
   for (var i = 0; i < 2; i++) {
     for (var j = 0; j < fightersList.length; j++) {
-      if (currentGame.players[i].choice === fightersList[j].id){
+      if (currentGame.players[i].choice === fightersList[j].id) {
         var img = document.createElement('img');
         img.src = fightersList[j].src;
         highlightWinner(img, i);
@@ -83,5 +96,5 @@ function resetGameDisplay() {
 
 function showStartSection() {
   hide(gameArea, computerScoreboard, playerScoreboard);
-  show(gameCardSection);
+  show(gameTypeSection);
 }

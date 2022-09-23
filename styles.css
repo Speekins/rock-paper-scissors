@@ -10,7 +10,7 @@ main {
   background-color: #f0788c;
 }
 
-.game-card-section {
+.game-type-section {
   grid-column-start: 2;
   display: flex;
   flex-direction: column;
@@ -19,7 +19,7 @@ main {
   background-color: gold;
 }
 
-.game-card {
+.game-type {
   display: flex;
   flex-direction: column;
   align-items: center;
