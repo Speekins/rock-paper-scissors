@@ -98,7 +98,7 @@ img {
   transition-duration: 300ms ;
 }
 
-img:hover {
+.fighter:hover {
   transform: scale(1.1);
 }
 
