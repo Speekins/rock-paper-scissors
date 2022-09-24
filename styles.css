@@ -93,9 +93,18 @@ main {
 
 .fighter-section {
  display: flex;
+ flex-direction: column;
  justify-content: space-evenly;
  width: 100%;
  height: auto;
+}
+
+.all-fighters {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: auto;
+  margin: 10px auto;
 }
 
 .show-choices-section {

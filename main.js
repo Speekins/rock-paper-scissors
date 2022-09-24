@@ -5,6 +5,7 @@ var winnerMessage;
 //Query Selectors
 var gameArea = document.getElementById('game-area');
 var fighterSection = document.getElementById('fighter-section');
+var allFighters = document.getElementsByClassName('all-fighters');
 var choicesSection = document.getElementById('show-choices-section');
 var computerScoreboard = document.querySelector('.computer-scoreboard');
 var playerScoreboard = document.querySelector('.player-scoreboard');
@@ -38,7 +39,6 @@ changeGameButton.addEventListener('click', showStartSection);
 
 gameTypeSection.addEventListener('click', function(event) {
   if (event.target.id === 'classic-game') {
-    console.log(event.target.id)
     currentGame.changeGameMode('classic');
     show(gameArea, computerScoreboard, playerScoreboard);
     hide(alien, lizard);
