@@ -1,60 +1,75 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <main>
-        <section class="player-scoreboard">
-          <div class="score-display">
-            <h1 id="player-icon">👨🏻</h1>
-            <h2>Player</h2>
-            <p>Wins: <span class="score" id="player-score">0</span></p>
-          </div>
-          <button class="change-game-button hidden" id="change-game-button">Change Game?</button>
-        </section>
-        <section class="game-area">
-          <div class="game-area-header">
-            <h1>Rock, Paper, Scissors</h1>
-            <h2 id="game-message">Choose your fighter!</h2>
-          </div>
-          <div class="fighter-section" id="fighter-section">
-            <img src="./assets/happy-paper.png" alt="happy paper" class="fighter" id="paper">
-            <img src="./assets/happy-rocks.png" alt="happy rocks" class="fighter" id="rock">
-            <img src="./assets/happy-scissors.png" alt="happy scissors" class="fighter" id="scissors">
-            <img src="./assets/happy-alien.png" alt="happy alien" class="fighter hidden" id="alien">
-            <img src="./assets/iguana.png" alt="lizard" class="fighter hidden" id="lizard">
-          </div>
-          <div class="game-card hidden" id="classic-game">
-            <p>Rock > Scissors</p>
-            <p>Paper > Rock</p>
-            <p>Scissors > Paper</p>
-          </div>
-          <div class="show-choices-section hidden" id="show-choices-section">
-          </div>
-          <div class="game-card hidden" id="enhanced-game">
-            <p>Rock > Scissors & Lizard</p>
-            <p>Paper > Rock & Alien</p>
-            <p>Scissors > Paper & Lizard</p>
-            <p>Lizard > Paper & Alien</p>
-            <p>Alien > Scissors & Rock</p>
-          </div>
-        </section>
-        <section class="computer-scoreboard">
-          <div class="score-display">
-            <h1>💻</h1>
-            <h2>Computer</h2>
-            <p>Wins: <span class="score" id="computer-score">0</span></p>
-          </div>
-        </section> 
-    </main>
-	  <script src="player.js"></script>
-    <script src="game.js"></script>
-    <script src="main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <section class="game-type-section hidden" id="game-type-section">
+      <h1>Welcome To Rock, Paper, Scissors!</h1>
+      <h2>Choose Your Game Type Below</h2>
+      <div class="game-type" id="classic-game">
+        <p>Rock > Scissors</p>
+        <p>Paper > Rock</p>
+        <p>Scissors > Paper</p>
+      </div>
+      <div class="game-type" id="enhanced-game">
+        <p>Rock > Scissors & Lizard</p>
+        <p>Paper > Rock & Alien</p>
+        <p>Scissors > Paper & Lizard</p>
+        <p>Lizard > Paper & Alien</p>
+        <p>Alien > Scissors & Rock</p>
+      </div>
+    </section>
+    <section class="player-scoreboard">
+      <div class="score-display">
+        <h1 id="player-icon">👨🏻</h1>
+        <h2>Player</h2>
+        <p>Wins: <span class="score" id="player-score">0</span></p>
+      </div>
+      <button class="change-game-button hidden" id="change-game-button">Change
+        Game?</button>
+    </section>
+    <section class="game-area" id="game-area">
+      <div class="game-area-header">
+        <h1>Rock, Paper, Scissors</h1>
+        <h2 id="game-message">Choose your fighter!</h2>
+      </div>
+      <div class="fighter-section" id="fighter-section">
+        <img src="./assets/happy-paper.png" alt="happy paper" class="fighter"
+          id="paper">
+        <img src="./assets/happy-rocks.png" alt="happy rocks" class="fighter"
+          id="rock">
+        <img src="./assets/happy-scissors.png" alt="happy scissors"
+          class="fighter" id="scissors">
+        <img src="./assets/happy-alien.png" alt="happy alien"
+          class="fighter hidden" id="alien">
+        <img src="./assets/iguana.png" alt="lizard" class="fighter hidden"
+          id="lizard">
+      </div>
+      <div class="show-choices-section hidden" id="show-choices-section">
+      </div>
+    </section>
+    <section class="computer-scoreboard">
+      <div class="score-display">
+        <h1>💻</h1>
+        <h2>Computer</h2>
+        <p>Wins: <span class="score" id="computer-score">0</span></p>
+      </div>
+    </section>
+  </main>
+  <script src="player.js"></script>
+  <script src="game.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>

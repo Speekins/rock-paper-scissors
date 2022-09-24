@@ -13,7 +13,7 @@ class Game {
     (human.choice === 'paper' && (computer.choice === 'rock' || computer.choice === 'alien')) ||
     (human.choice === 'scissors' && (computer.choice === 'paper' || computer.choice === 'lizard')) ||
     (human.choice === 'alien' && (computer.choice === 'scissors' || computer.choice === 'rock')) ||
-    (human.choice === 'lizard' && (computer.choice === 'paper' && computer.choice === 'alien')) ){
+    (human.choice === 'lizard' && (computer.choice === 'paper' || computer.choice === 'alien')) ){
       human.score += 1;
       return 'You won!'
     } else if (human.choice === computer.choice) {
@@ -32,9 +32,9 @@ class Game {
       this.players[0].icon = icon;
     }
 
-    changeGameMode() {
+    changeGameMode(gameType) {
       for (var i = 0; i < this.players.length; i++) {
-        this.players[i].changeFighters();
+        this.players[i].changeFighters(gameType);
       }
     }
 
