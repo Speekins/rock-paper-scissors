@@ -1,15 +1,9 @@
-var Player = require('./player.js');
+// var Player = require('./player.js');
 
 class Game {
   constructor() {
     this.players = [new Player(), new Player('computer')];
   }
-
-  // populatePlayers() {
-  //   var human = new Player();
-  //   var computer = new Player('computer');
-  //   this.players.push(human, computer);
-  // }
 
   determineWinner() {
     var human = this.players[0];
@@ -20,12 +14,15 @@ class Game {
     (human.choice === 'scissors' && (computer.choice === 'paper' || computer.choice === 'lizard')) ||
     (human.choice === 'alien' && (computer.choice === 'scissors' || computer.choice === 'rock')) ||
     (human.choice === 'lizard' && (computer.choice === 'paper' && computer.choice === 'alien')) ){
-        human.gamesWon += 1;
+      human.score += 1;
+      return 'You won!'
     } else if (human.choice === computer.choice) {
-      console.log('It\'s a tie!')
-      return 
-    } else { computer.gamesWon += 1 };
+      return 'It\'s a tie!';
+    } else {
+      computer.score += 1;
+      return 'Computer won!'
     }
+  }
 
     changeHumanName(name) {
       this.players[0].name = name;
@@ -49,20 +46,20 @@ class Game {
 }
 
 // Tests
-var newGame = new Game;
+// var newGame = new Game;
 
-newGame.changeHumanName('spencer');
-newGame.changeHumanIcon('🎩');
-newGame.updateChoices('scissors');
+// newGame.changeHumanName('spencer');
+// newGame.changeHumanIcon('🎩');
+// newGame.updateChoices('scissors');
 
-newGame.determineWinner();
+// newGame.determineWinner();
 
-console.log('Human: ', newGame.players[0]);
-console.log('Computer: ', newGame.players[1]);
+// console.log('Human: ', newGame.players[0]);
+// console.log('Computer: ', newGame.players[1]);
 
-newGame.changeGameMode();
-newGame.updateChoices('alien');
-newGame.determineWinner();
+// newGame.changeGameMode();
+// newGame.updateChoices('alien');
+// newGame.determineWinner();
 
-console.log('Human: ', newGame.players[0]);
-console.log('Computer: ', newGame.players[1]);
+// console.log('Human: ', newGame.players[0]);
+// console.log('Computer: ', newGame.players[1]);

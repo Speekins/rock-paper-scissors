@@ -70,6 +70,7 @@ main {
   padding-bottom: 10px;
   border: none;
   transition-duration: 300ms;
+  animation: fadeIn 2s;
 }
 
 .change-game-button:hover {
@@ -77,18 +78,39 @@ main {
   box-shadow: 3px 3px 5px black;
 }
 
-.fighters {
+.fighter-section {
  display: flex;
  justify-content: space-evenly;
  width: 100%;
  height: auto;
 }
 
+.show-choices-section {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: auto;
+ }
+
 img {
   height: 200px;
   width: auto;
+  transition-duration: 300ms ;
+}
+
+img:hover {
+  transform: scale(1.1);
 }
 
 .hidden {
   display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
 }
