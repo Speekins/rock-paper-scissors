@@ -6,6 +6,7 @@ var winnerMessage;
 var gameArea = document.getElementById('game-area');
 var fighterSection = document.getElementById('fighter-section');
 var allFighters = document.getElementsByClassName('all-fighters');
+var enhancedFighters = document.getElementById('enhanced-fighters');
 var choicesSection = document.getElementById('show-choices-section');
 var computerScoreboard = document.querySelector('.computer-scoreboard');
 var playerScoreboard = document.querySelector('.player-scoreboard');
@@ -14,11 +15,10 @@ var gameMessage = document.getElementById('game-message');
 var computerScore = document.getElementById('computer-score');
 var playerScore = document.getElementById('player-score');
 var playerIcon = document.getElementById('player-icon');
+var computerIcon = document.getElementById('computer-icon');
 var gameTypeSection = document.getElementById('game-type-section');
 var changeGameButton = document.getElementById('change-game-button');
-var alien = document.getElementById('alien');
-var lizard = document.getElementById('lizard');
-var computerIcon = document.getElementById('computer-icon');
+
 
 //Event Listeners
 window.addEventListener('load', function() {
@@ -38,15 +38,15 @@ fighterSection.addEventListener('click', function(event) {
 changeGameButton.addEventListener('click', showStartSection);
 
 gameTypeSection.addEventListener('click', function(event) {
-  if (event.target.id === 'classic-game') {
+  if (event.target.closest('div').id === 'classic-game') {
     currentGame.changeGameMode('classic');
+    hide(enhancedFighters, gameTypeSection);
     show(gameArea, computerScoreboard, playerScoreboard);
-    hide(alien, lizard);
-  } else if (event.target.id === 'enhanced-game') {
+  } else if (event.target.closest('div').id === 'enhanced-game') {
     currentGame.changeGameMode('enhanced');
-    show(gameArea, computerScoreboard, playerScoreboard, alien, lizard);
+    hide(gameTypeSection);
+    show(gameArea, computerScoreboard, playerScoreboard, enhancedFighters);
   }
-  hide(gameTypeSection);
 })
 
 //Main Script
