@@ -1,26 +1,35 @@
 class Player {
-  constructor(name) {
-    this.name = name;
+  constructor(name, icon) {
+    this.name = name || 'player';
     this.gamesWon = 0;
     this.fighters = ['rock', 'paper', 'scissors'];
     this.choice;
-    this.icon;
+    this.icon = icon || '😀';
     if (this.name === 'computer'.toLowerCase()) {
-      this.randomChoice();
+      this.icon = '💻';
     };
   }
 
   randomChoice() {
     var randomIndex = Math.floor(Math.random() * this.fighters.length);
     this.choice = this.fighters[randomIndex];
-    this.icon = '💻';
   }
 
-  changeDifficulty() {
+  changeFighters() {
     if (this.fighters.length === 3){
     this.fighters = ['spock', 'rock', 'paper', 'scissors', 'lizard'];
     } else {
       this.fighters = ['rock', 'paper', 'scissors'];
     }
   }
+
+  updateChoice(choice) {
+    if (this.name !== 'computer') {
+      this.choice = choice;
+    } else {
+      this.randomChoice();
+    }
+  }
 }
+
+module.exports = Player;

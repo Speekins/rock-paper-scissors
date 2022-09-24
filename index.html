@@ -11,20 +11,44 @@
   <body>
     <main>
         <section class="player-scoreboard" id="player-scoreboard">
-          <h2>👨🏻</h2>
-          <h2>Player</h2>
+          <div class="score-display">
+            <h1>👨🏻</h1>
+            <h2>Player</h2>
+            <p>Wins:<span class="score" id="player-score">0</span></p>
+          </div>
+          <button class="change-game-button ">Change Game?</button>
         </section>
         <section class="game-area">
-          <h1>Rock, Paper, Scissors</h1>
+          <div class="game-area-header">
+            <h1>Rock, Paper, Scissors</h1>
+            <h2>Choose your fighter!</h2>
+          </div>
           <div class="fighters">
             <img src="./assets/happy-paper.png" alt="happy paper">
             <img src="./assets/happy-rocks.png" alt="happy rocks">
             <img src="./assets/happy-scissors.png" alt="happy scissors">
+            <img src="./assets/happy-alien.png" alt="happy alien" class="hidden">
+            <img src="./assets/iguana.png" alt="iguana" class="hidden">
+            <div class="game-card hidden" id="classic-game">
+              <p>Rock > Scissors</p>
+              <p>Paper > Rock</p>
+              <p>Scissors > Paper</p>
+            </div>
+            <div class="game-card hidden" id="enhanced-game">
+              <p>Rock > Scissors & Lizard</p>
+              <p>Paper > Rock & Alien</p>
+              <p>Scissors > Paper & Lizard</p>
+              <p>Lizard > Paper & Alien</p>
+              <p>Alien > Scissors & Rock</p>
+            </div>
           </div>
         </section>
         <section class="computer-scoreboard" id="computer-scoreboard">
-          <h2>💻</h2>
-          <h2>Computer</h2>
+          <div class="score-display">
+            <h1>💻</h1>
+            <h2>Computer</h2>
+            <p>Wins:<span class="score" id="computer-score">0</span></p>
+          </div>
         </section> 
     </main>
 	<script src="main.js"></script>
