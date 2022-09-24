@@ -4,9 +4,10 @@ class Player {
     this.score = 0;
     this.fighters = ['rock', 'paper', 'scissors'];
     this.choice;
-    this.icon = icon || '😀';
+    this.icon;
+    this.computerIcons = ['./assets/wall-e.webp', './assets/robot.png', './assets/c3po.png'];
     if (this.name === 'computer'.toLowerCase()) {
-      this.icon = '💻';
+      this.icon = this.assignRandomIcon();
     };
   }
 
@@ -15,12 +16,9 @@ class Player {
     this.choice = this.fighters[randomIndex];
   }
 
-  changeFighters(gameType) {
-    if (gameType === 'classic'){
-    this.fighters = ['rock', 'paper', 'scissors'];
-    } else if (gameType === 'enhanced') {
-      this.fighters = ['alien', 'rock', 'paper', 'scissors', 'lizard'];
-    }
+  assignRandomIcon() {
+    var randomIndex = Math.floor(Math.random() * this.computerIcons.length);
+    return this.computerIcons[randomIndex]; 
   }
 
   updateChoice(choice) {

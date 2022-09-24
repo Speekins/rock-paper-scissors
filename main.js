@@ -17,8 +17,13 @@ var gameTypeSection = document.getElementById('game-type-section');
 var changeGameButton = document.getElementById('change-game-button');
 var alien = document.getElementById('alien');
 var lizard = document.getElementById('lizard');
+var computerIcon = document.getElementById('computer-icon');
 
 //Event Listeners
+window.addEventListener('load', function() {
+  computerIcon.src = currentGame.players[1].icon;
+})
+
 fighterSection.addEventListener('click', function(event) {
   currentGame.updateChoices(event.target.id);
   winnerMessage = currentGame.determineWinner();

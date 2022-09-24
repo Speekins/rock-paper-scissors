@@ -3,6 +3,10 @@
 class Game {
   constructor() {
     this.players = [new Player(), new Player('computer')];
+    this.gameModes = {
+      classic: ['rock', 'paper', 'scissors'],
+      enhanced: ['alien', 'rock', 'paper', 'scissors', 'lizard']
+    }
   }
 
   determineWinner() {
@@ -34,7 +38,7 @@ class Game {
 
     changeGameMode(gameType) {
       for (var i = 0; i < this.players.length; i++) {
-        this.players[i].changeFighters(gameType);
+        this.players[i].fighters = this.gameModes[gameType];
       }
     }
 
