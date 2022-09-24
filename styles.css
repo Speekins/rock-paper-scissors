@@ -156,11 +156,11 @@ main {
 }
 
 .winner {
-  animation: sizeUp 3s;
+  animation: sizeUp 2s;
 }
 
 .loser {
-  animation: fadeOut 3s;
+  animation: fadeOut 2s;
 }
 
 .hidden {

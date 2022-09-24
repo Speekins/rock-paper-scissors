@@ -32,7 +32,7 @@ fighterSection.addEventListener('click', function(event) {
   updateScore();
   displayWin();
   show(changeGameButton);
-  setTimeout(resetGameDisplay, 3000);
+  setTimeout(resetGameDisplay, 2000);
 })
 
 changeGameButton.addEventListener('click', showStartSection);
