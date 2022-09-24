@@ -79,12 +79,13 @@ function displayWin() {
 
 function highlightWinner(element, index) {
   if (winnerMessage.includes('You') && index === 0) {
-    element.classList.add('winner');
+    element.classList.add('winner', 'choice');
   } else if (winnerMessage.includes('Computer') && index === 1) {
-    element.classList.add('winner');
+    element.classList.add('winner', 'choice');
   } else if (winnerMessage.includes('tie')){
+    element.classList.add('choice');
     return;
-  } else { element.classList.add('loser') }
+  } else { element.classList.add('loser', 'choice') }
 }
 
 function updateScore() {

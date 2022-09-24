@@ -92,6 +92,12 @@ main {
   margin-bottom: 15px;
 }
 
+.icon {
+  width: 200px;
+  height: auto;
+  margin-top: 20px;
+}
+
 .score-display h1 {
   transform: scale(2);
 }
@@ -126,15 +132,8 @@ main {
   margin: 10px auto;
 }
 
-.show-choices-section {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  height: auto;
- }
-
-img {
-  height: 200px;
+.fighter {
+  height: 250px;
   width: auto;
   transition-duration: 300ms ;
 }
@@ -143,8 +142,16 @@ img {
   transform: scale(1.1);
 }
 
-.hidden {
-  display: none;
+.show-choices-section {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: auto;
+ }
+
+ .choice {
+  height: 200px;
+  width: auto;
 }
 
 .winner {
@@ -153,6 +160,10 @@ img {
 
 .loser {
   animation: fadeOut 3s;
+}
+
+.hidden {
+  display: none;
 }
 
 @keyframes fadeIn {
