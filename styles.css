@@ -57,7 +57,7 @@ main {
 
 .game-area-header {
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 75px;
 }
 
 .game-area-header h1 {
@@ -93,8 +93,8 @@ main {
 }
 
 .icon {
-  width: 200px;
-  height: auto;
+  height: 200px;
+  width: auto;
   margin-top: 20px;
 }
 
@@ -104,6 +104,7 @@ main {
 
 .change-game-button {
   width: 50%;
+  margin-top: 100px;
   padding-top: 10px;
   padding-bottom: 10px;
   border: none;
@@ -133,7 +134,7 @@ main {
 }
 
 .fighter {
-  height: 250px;
+  height: 225px;
   width: auto;
   transition-duration: 300ms ;
 }
