@@ -67,13 +67,15 @@ main {
   border-radius: 15px;
   transition-duration: 300ms;
   margin-top: 25px;
+  background-color: #f14562;
+  color: black;
 }
 
 .lets-play:hover {
   transform: scale(1.1);
   cursor: pointer;
   box-shadow: 5px 5px 10px black;
-  background-color: #f14562;
+  
 }
 
 .game-type-section {

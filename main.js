@@ -21,12 +21,17 @@ var gameTypeSection = document.getElementById('game-type-section');
 var changeGameButton = document.getElementById('change-game-button');
 var iconChoices = document.getElementById('icon-choices');
 var enterName = document.getElementById('enter-name');
+var letsPlayButton = document.getElementById('lets-play');
 
 
 //Event Listeners
 window.addEventListener('load', function() {
   computerIcon.src = currentGame.players[1].icon;
   populateIconChoices();
+})
+
+enterName.addEventListener('input', function() {
+  letsPlayButton.classList.remove('disabled');
 })
 
 fighterSection.addEventListener('click', function(event) {
