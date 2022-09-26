@@ -1,8 +1,8 @@
 class Player {
-  constructor(name) {
-    this.name = name;
+  constructor() {
+    this.name;
     this.score = 0;
-    this.fighters = ['rock', 'paper', 'scissors'];
+    this.fighters;
     this.choice;
     this.icon;
     this.computerIcons = ['./assets/wall-e.webp', './assets/robot.png', './assets/c3po.png'];
