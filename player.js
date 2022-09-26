@@ -1,6 +1,6 @@
 class Player {
-  constructor(name, icon) {
-    this.name = name || 'player';
+  constructor(name) {
+    this.name = name;
     this.score = 0;
     this.fighters = ['rock', 'paper', 'scissors'];
     this.choice;
@@ -19,6 +19,11 @@ class Player {
   assignRandomIcon() {
     var randomIndex = Math.floor(Math.random() * this.computerIcons.length);
     return this.computerIcons[randomIndex]; 
+  }
+
+  updatePlayerInfo(name, src) {
+    this.name = name;
+    this.icon = src;
   }
 
   updateChoice(choice) {

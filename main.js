@@ -23,6 +23,7 @@ var iconChoices = document.getElementById('icon-choices');
 var enterName = document.getElementById('enter-name');
 var letsPlayButton = document.getElementById('lets-play');
 var nameWarning = document.getElementById('name-warning');
+var chooseYourIcon = document.getElementById('choose-your-icon');
 
 
 //Event Listeners
@@ -34,14 +35,10 @@ window.addEventListener('load', function() {
 iconChoices.addEventListener('click', function(event) {
   if (!!enterName.value) {
   letsPlayButton.classList.remove('disabled');
-  hide(nameWarning);
-  currentGame.players[0].icon = event.target.src;
-  console.log(event.target.src);
+  hide(nameWarning, chooseYourIcon);
+  currentGame.players[0].updatePlayerInfo(enterName.value, event.target.src);
   iconChoices.innerHTML = '';
-  var img = document.createElement('img');
-  img.src = currentGame.players[0].icon;
-  img.classList.add('icon');
-  iconChoices.appendChild(img);
+  appendImage('icon', iconChoices, currentGame.players[0].icon);
   } else {
     show(nameWarning);
   }
@@ -129,9 +126,13 @@ function showStartSection() {
 
 function populateIconChoices() {
   for (var i = 0; i < currentGame.playerIcons.length; i++) {
-    var img = document.createElement('img');
-    img.src = currentGame.playerIcons[i];
-    img.classList.add('icon-choice');
-    iconChoices.appendChild(img);
+    appendImage('icon-choice', iconChoices, currentGame.playerIcons[i])
   }
+}
+
+function appendImage(className, parent, src) {
+  var img = document.createElement('img');
+  img.src = src;
+  img.classList.add(className);
+  parent.appendChild(img);
 }
