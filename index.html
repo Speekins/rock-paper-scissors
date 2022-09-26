@@ -19,7 +19,9 @@
       <input type="text" class="enter-name" id="enter-name" name="enter-name" required
       minlength="1" maxlength="20">
       <h2>Choose Your Icon</h2>
-      <div class="icon-choices" id="icon-choices"></div>
+      <div class="icon-choices" id="icon-choices">
+      </div>
+      <button class="lets-play disabled" id="lets-play" disabled>Let's Play!</button>
     </section>
     <section class="game-type-section hidden" id="game-type-section">
       <h1>Welcome To Rock, Paper, Scissors!</h1>
@@ -41,8 +43,8 @@
     </section>
     <section class="player-scoreboard hidden">
       <div class="score-display">
-        <img class="icon" id="player-icon" src="./assets/beyonce.png">
-        <h2>Player</h2>
+        <img class="icon" id="player-icon">
+        <h2 id="player-name"></h2>
         <p>Wins: <span class="score" id="player-score">0</span></p>
       </div>
       <button class="change-game-button hidden" id="change-game-button">Change

@@ -15,14 +15,18 @@ var gameMessage = document.getElementById('game-message');
 var computerScore = document.getElementById('computer-score');
 var playerScore = document.getElementById('player-score');
 var playerIcon = document.getElementById('player-icon');
+var playerName = document.getElementById('player-name');
 var computerIcon = document.getElementById('computer-icon');
 var gameTypeSection = document.getElementById('game-type-section');
 var changeGameButton = document.getElementById('change-game-button');
+var iconChoices = document.getElementById('icon-choices');
+var enterName = document.getElementById('enter-name');
 
 
 //Event Listeners
 window.addEventListener('load', function() {
   computerIcon.src = currentGame.players[1].icon;
+  populateIconChoices();
 })
 
 fighterSection.addEventListener('click', function(event) {
@@ -103,4 +107,12 @@ function resetGameDisplay() {
 function showStartSection() {
   hide(gameArea, computerScoreboard, playerScoreboard);
   show(gameTypeSection);
+}
+
+function populateIconChoices() {
+  for (var i = 0; i < currentGame.playerIcons.length; i++) {
+    var img = document.createElement('img');
+    img.src = currentGame.playerIcons[i];
+    iconChoices.appendChild(img);
+  }
 }

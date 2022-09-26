@@ -1,12 +1,11 @@
-// var Player = require('./player.js');
-
 class Game {
   constructor() {
     this.players = [new Player(), new Player('computer')];
     this.gameModes = {
       classic: ['rock', 'paper', 'scissors'],
       enhanced: ['alien', 'rock', 'paper', 'scissors', 'lizard']
-    }
+    };
+    this.playerIcons = ['./assets/beyonce.png', './assets/rambo.png', './assets/django.png', './assets/katniss.png', './assets/leonidas.png', './assets/blackpanther.png', './assets/brucelee.png', './assets/wonderwoman.png'];
   }
 
   determineWinner() {
@@ -48,22 +47,3 @@ class Game {
       }
     } 
 }
-
-// Tests
-// var newGame = new Game;
-
-// newGame.changeHumanName('spencer');
-// newGame.changeHumanIcon('🎩');
-// newGame.updateChoices('scissors');
-
-// newGame.determineWinner();
-
-// console.log('Human: ', newGame.players[0]);
-// console.log('Computer: ', newGame.players[1]);
-
-// newGame.changeGameMode();
-// newGame.updateChoices('alien');
-// newGame.determineWinner();
-
-// console.log('Human: ', newGame.players[0]);
-// console.log('Computer: ', newGame.players[1]);
