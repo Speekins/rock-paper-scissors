@@ -47,14 +47,14 @@ main {
   height: auto;
 }
 
-.icon-choices img {
+.icon-choice {
   height: 125px;
   width: auto;
   margin: 10px;
   transition-duration: 300ms;
 }
 
-.icon-choices img:hover {
+.icon-choice:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -75,7 +75,6 @@ main {
   transform: scale(1.1);
   cursor: pointer;
   box-shadow: 5px 5px 10px black;
-  
 }
 
 .game-type-section {

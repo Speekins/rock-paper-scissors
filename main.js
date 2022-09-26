@@ -34,6 +34,16 @@ enterName.addEventListener('input', function() {
   letsPlayButton.classList.remove('disabled');
 })
 
+iconChoices.addEventListener('click', function(event) {
+  currentGame.players[0].icon = event.target.src;
+  console.log(event.target.src);
+  iconChoices.innerHTML = '';
+  var img = document.createElement('img');
+  img.src = currentGame.players[0].icon;
+  img.classList.add('icon');
+  iconChoices.appendChild(img);
+})
+
 fighterSection.addEventListener('click', function(event) {
   currentGame.updateChoices(event.target.id);
   winnerMessage = currentGame.determineWinner();
@@ -118,6 +128,7 @@ function populateIconChoices() {
   for (var i = 0; i < currentGame.playerIcons.length; i++) {
     var img = document.createElement('img');
     img.src = currentGame.playerIcons[i];
+    img.classList.add('icon-choice');
     iconChoices.appendChild(img);
   }
 }
