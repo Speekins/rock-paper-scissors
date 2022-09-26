@@ -114,6 +114,7 @@ function displayWin() {
   hide(fighterSection);
   show(choicesSection);
   choicesSection.innerHTML = '';
+  //Because we already know the position of each player, use a single for loop and two if statements
   for (var i = 0; i < 2; i++) {
     for (var j = 0; j < fightersList.length; j++) {
       if (currentGame.players[i].choice === fightersList[j].id) {
