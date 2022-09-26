@@ -22,6 +22,7 @@ var changeGameButton = document.getElementById('change-game-button');
 var iconChoices = document.getElementById('icon-choices');
 var enterName = document.getElementById('enter-name');
 var letsPlayButton = document.getElementById('lets-play');
+var nameWarning = document.getElementById('name-warning');
 
 
 //Event Listeners
@@ -30,11 +31,10 @@ window.addEventListener('load', function() {
   populateIconChoices();
 })
 
-enterName.addEventListener('input', function() {
-  letsPlayButton.classList.remove('disabled');
-})
-
 iconChoices.addEventListener('click', function(event) {
+  if (!!enterName.value) {
+  letsPlayButton.classList.remove('disabled');
+  hide(nameWarning);
   currentGame.players[0].icon = event.target.src;
   console.log(event.target.src);
   iconChoices.innerHTML = '';
@@ -42,6 +42,9 @@ iconChoices.addEventListener('click', function(event) {
   img.src = currentGame.players[0].icon;
   img.classList.add('icon');
   iconChoices.appendChild(img);
+  } else {
+    show(nameWarning);
+  }
 })
 
 fighterSection.addEventListener('click', function(event) {

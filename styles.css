@@ -59,6 +59,11 @@ main {
   cursor: pointer;
 }
 
+.name-warning {
+  color: red;
+  font-size: 20px;
+}
+
 .lets-play {
   width: 20%;
   height: auto;
