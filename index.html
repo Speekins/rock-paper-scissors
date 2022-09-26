@@ -14,6 +14,13 @@
 
 <body>
   <main>
+    <section class="start-screen" id="start-screen">
+      <h1>Enter Your Name</h1>
+      <input type="text" id="name" name="name" required
+      minlength="1" maxlength="20">
+      <h1>Choose Your Icon</h1>
+      <div></div>
+    </section>
     <section class="game-type-section hidden" id="game-type-section">
       <h1>Welcome To Rock, Paper, Scissors!</h1>
       <h2>Choose Your Game Type Below</h2>
@@ -32,7 +39,7 @@
         </div>
       </div>
     </section>
-    <section class="player-scoreboard">
+    <section class="player-scoreboard hidden">
       <div class="score-display">
         <img class="icon" id="player-icon" src="./assets/beyonce.png">
         <h2>Player</h2>
@@ -41,7 +48,7 @@
       <button class="change-game-button hidden" id="change-game-button">Change
         Game?</button>
     </section>
-    <section class="game-area" id="game-area">
+    <section class="game-area hidden" id="game-area">
       <div class="game-area-header">
         <h1>Rock, Paper, Scissors</h1>
         <h2 id="game-message">Choose your fighter!</h2>
@@ -65,7 +72,7 @@
       <div class="show-choices-section hidden" id="show-choices-section">
       </div>
     </section>
-    <section class="computer-scoreboard">
+    <section class="computer-scoreboard hidden">
       <div class="score-display">
         <img class="icon" id="computer-icon">
         <h2>Computer</h2>
