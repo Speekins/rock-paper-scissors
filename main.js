@@ -3,6 +3,7 @@ var currentGame = new Game();
 var winnerMessage;
 
 //Query Selectors
+var startScreen = document.getElementById('start-screen');
 var gameArea = document.getElementById('game-area');
 var fighterSection = document.getElementById('fighter-section');
 var allFighters = document.getElementsByClassName('all-fighters');
@@ -28,12 +29,13 @@ var chooseYourIcon = document.getElementById('choose-your-icon');
 
 //Event Listeners
 window.addEventListener('load', function() {
-  computerIcon.src = currentGame.players[1].icon;
+  
   populateIconChoices();
 })
 
 iconChoices.addEventListener('click', function(event) {
   if (!!enterName.value) {
+  letsPlayButton.disabled = false;
   letsPlayButton.classList.remove('disabled');
   hide(nameWarning, chooseYourIcon);
   currentGame.players[0].updatePlayerInfo(enterName.value, event.target.src);
@@ -42,6 +44,14 @@ iconChoices.addEventListener('click', function(event) {
   } else {
     show(nameWarning);
   }
+})
+
+letsPlayButton.addEventListener('click', function() {
+  playerName.innerText = currentGame.players[0].name;
+  playerIcon.src = currentGame.players[0].icon;
+  computerIcon.src = currentGame.players[1].icon;
+  hide(startScreen);
+  show(playerScoreboard, gameArea, computerScoreboard);
 })
 
 fighterSection.addEventListener('click', function(event) {
@@ -115,7 +125,6 @@ function updateScore() {
 function resetGameDisplay() {
   show(fighterSection);
   hide(choicesSection);
-  choicesSection.innerHTML = '';
   gameMessage.innerText = 'Choose your fighter!';
 }
 
