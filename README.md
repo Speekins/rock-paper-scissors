@@ -11,7 +11,6 @@ In order to access and clone the repository, a user can fork the repository from
 ![gif of rock-paper-scissors game](https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/116e35f3-5aa5-47b1-84c6-86dc64b155b8.gif?ClientID=vimeo-core-prod&Date=1664232343&Signature=296c3038f283fb25e777000eb983c821ca012f28)
 
 ### Context:
-[//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
 I am currently a student in module one (of four) of the Turing Front End Program. The project required about 6 days to complete, at approximately 2 hours a day for a total of 12 hours.
 
 ### Contributors:
@@ -23,10 +22,9 @@ https://github.com/Speekins/
 2. Capture user events and appropriately delegate in order to effectively create a responsive webpage (via event listeners & handlers).
 3. Use a "data model first" approach to write and maintain a data model that dictates the information portrayed on the DOM.
 4. Build individual problem solving skills by breaking down problems into smaller parts so as to build something on my own without consulting outside sources.
-5. Use HTML & CSS to replicate a given "website".Use HTML & CSS to replicate a given "website".
+5. Use HTML & CSS to generally replicate a given layout.
 
 ### Wins + Challenges:
-[//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
 #### Wins
 1. A significant win was being able to successfully add a start screen page where the user can personalize their experience by adding their name and selecting their preferred icon. These actions were both a bit challenging at the start considering event propogation--how to collect the user's data and icon choices before they exist (they do not appear at page load). The user obviously enters their name after page load, and, though not visible, the icon choices are dynamically added to the start screen with the function `populateIconChoices` after the JS interpreter has read the files. Figuring out how to dynamically "grab" that information was a win.
 2. CSS is also always a win for me. It's not particularly easy to get web pages to layout the way that you want them. Using grid and flexbox successfully was a win.
