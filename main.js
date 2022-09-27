@@ -77,7 +77,10 @@ fighterSection.addEventListener('click', function(event) {
   setTimeout(resetGameDisplay, 2000);
 })
 
-changeGameButton.addEventListener('click', showStartSection);
+changeGameButton.addEventListener('click', function() {
+  hide(gameArea, computerScoreboard, playerScoreboard);
+  show(gameTypeSection);
+});
 
 //Main Script
 function hide(...elements) {
@@ -106,11 +109,6 @@ function appendImage(className, parent, src) {
   if (parent === choicesSection) {
     img.classList.add('choice');
   }
-}
-
-function showStartSection() {
-  hide(gameArea, computerScoreboard, playerScoreboard);
-  show(gameTypeSection);
 }
 
 function displayWin() {
