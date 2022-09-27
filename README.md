@@ -3,7 +3,7 @@ ______________________________________________________
 
 ### Abstract:
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
-This application is meant to bring calm and meditation in a crazy world. Americans are increasinly over-worked and unable to take the time to rest and center themselves. That's where "Self Care Center" comes in--the app provides calming mantras and affirmations to assist anyone who is looking to meditate but does not know where to start. "Self Care Center" can provide that starting place and give meditation newbies and pros alike a boost to this practice.
+When you are bored and looking to pass the time, what better way than to play a game of rock-paper-scissors. Better yet, no friends required! The computer will prove to be an excellent opponent.
 
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
