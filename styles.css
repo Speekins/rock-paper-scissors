@@ -1,5 +1,6 @@
 * {
   font-family: 'Bungee Inline', cursive;
+  color: black;
 }
 
 main {
@@ -20,9 +21,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  font-size: 40px;
 }
 
 .start-screen h1 {
@@ -34,8 +32,6 @@ main {
 }
 
 .enter-name {
-  width: 60%;
-  height: auto;
   font-size: 40px;
   border-radius: 15px;
   text-align: center;
@@ -48,12 +44,10 @@ main {
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  height: auto;
 }
 
 .icon-choice {
   height: 125px;
-  width: auto;
   margin: 10px;
   transition-duration: 300ms;
 }
@@ -70,14 +64,12 @@ main {
 
 .lets-play {
   width: 20%;
-  height: auto;
   font-size: 30px;
   border: none;
   border-radius: 15px;
   transition-duration: 300ms;
   margin-top: 25px;
   background-color: #f14562;
-  color: black;
 }
 
 .lets-play:hover {
@@ -96,13 +88,12 @@ main {
 
 .game-type-section h1 {
   display: inline;
-  width: 100%;
   text-align: center;
-  font-size: 60px;
+  font-size: 50px;
 }
 
 .game-type-section h2 {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .game-types {
@@ -132,10 +123,8 @@ main {
 }
 
 .game-area {
-  grid-column-start: 2;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .game-area-header {
@@ -153,7 +142,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: #f14562; */
+  text-align: center;
   background: rgb(251,6,6);
   background: linear-gradient(45deg, rgba(251,6,6,1) 10%, rgba(32,63,246,1) 95%);
 }
@@ -162,8 +151,7 @@ main {
   grid-column-start: 3;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /* background-color: #f14562; */
+  text-align: center;
   background: rgb(251,6,6);
   background: linear-gradient(135deg, rgba(251,6,6,1) 10%, rgba(32,63,246,1) 95%);
 }
@@ -172,21 +160,13 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  height: 50%;
-  width: auto;
   font-size: 30px;
-  margin-bottom: 15px;
 }
 
 .icon {
   height: 200px;
   width: auto;
   margin-top: 20px;
-}
-
-.score-display h1 {
-  transform: scale(2);
 }
 
 .change-game-button {
@@ -208,21 +188,17 @@ main {
  display: flex;
  flex-direction: column;
  justify-content: space-evenly;
- width: 100%;
- height: auto;
 }
 
 .all-fighters {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  height: auto;
   margin: 10px auto;
 }
 
 .fighter {
   height: 225px;
-  width: auto;
   transition-duration: 300ms ;
 }
 
@@ -233,8 +209,6 @@ main {
 .show-choices-section {
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
-  height: auto;
  }
 
  .choice {
