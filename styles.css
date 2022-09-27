@@ -8,6 +8,10 @@ main {
   height: 100vh;
   width: auto;
   background-color: #f0788c;
+  background-image: url('./assets/lightsaber.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .start-screen {
@@ -61,7 +65,7 @@ main {
 
 .name-warning {
   color: red;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .lets-play {
@@ -136,7 +140,7 @@ main {
 
 .game-area-header {
   text-align: center;
-  margin-bottom: 75px;
+  margin-bottom: 50px;
 }
 
 .game-area-header h1 {
@@ -149,7 +153,9 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f14562;
+  /* background-color: #f14562; */
+  background: rgb(251,6,6);
+  background: linear-gradient(45deg, rgba(251,6,6,1) 10%, rgba(32,63,246,1) 95%);
 }
 
 .computer-scoreboard {
@@ -157,7 +163,9 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f14562;
+  /* background-color: #f14562; */
+  background: rgb(251,6,6);
+  background: linear-gradient(135deg, rgba(251,6,6,1) 10%, rgba(32,63,246,1) 95%);
 }
 
 .score-display {
