@@ -1,5 +1,4 @@
-# Rock-Paper-Scissors 
-______________________________________________________  
+# Rock-Paper-Scissors
 
 ### Abstract:
 When you are bored and looking to pass the time, what better way than to play a game of rock-paper-scissors. Better yet, no friends required! The computer will prove to be an excellent opponent.
