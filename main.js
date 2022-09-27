@@ -1,35 +1,34 @@
 //Global Variables
 var currentGame = new Game();
-var winnerMessage;
 
-//Query Selectors
+//Start Screen Query Selectors
 var startScreen = document.getElementById('start-screen');
-var gameArea = document.getElementById('game-area');
-var fighterSection = document.getElementById('fighter-section');
-var allFighters = document.getElementsByClassName('all-fighters');
-var enhancedFighters = document.getElementById('enhanced-fighters');
-var choicesSection = document.getElementById('show-choices-section');
-var computerScoreboard = document.querySelector('.computer-scoreboard');
-var playerScoreboard = document.querySelector('.player-scoreboard');
-var fightersList = document.getElementsByClassName('fighter');
-var gameMessage = document.getElementById('game-message');
-var computerScore = document.getElementById('computer-score');
-var playerScore = document.getElementById('player-score');
-var playerIcon = document.getElementById('player-icon');
-var playerName = document.getElementById('player-name');
-var computerIcon = document.getElementById('computer-icon');
-var gameTypeSection = document.getElementById('game-type-section');
-var changeGameButton = document.getElementById('change-game-button');
 var iconChoices = document.getElementById('icon-choices');
 var enterName = document.getElementById('enter-name');
 var letsPlayButton = document.getElementById('lets-play');
 var nameWarning = document.getElementById('name-warning');
 var chooseYourIcon = document.getElementById('choose-your-icon');
-
+//Game Types Query Selectors
+var gameTypeSection = document.getElementById('game-type-section');
+//Main Game Area Query Selectors
+var gameArea = document.getElementById('game-area');
+var fighterSection = document.getElementById('fighter-section');
+var enhancedFighters = document.getElementById('enhanced-fighters');
+var choicesSection = document.getElementById('show-choices-section');
+var fightersList = document.getElementsByClassName('fighter');
+var gameMessage = document.getElementById('game-message');
+var changeGameButton = document.getElementById('change-game-button');
+//Player & Computer Query Selectors
+var computerScoreboard = document.querySelector('.computer-scoreboard');
+var computerScore = document.getElementById('computer-score');
+var computerIcon = document.getElementById('computer-icon');
+var playerScoreboard = document.querySelector('.player-scoreboard');
+var playerScore = document.getElementById('player-score');
+var playerIcon = document.getElementById('player-icon');
+var playerName = document.getElementById('player-name');
 
 //Event Listeners
 window.addEventListener('load', function() {
-  
   populateIconChoices();
 })
 
@@ -51,13 +50,24 @@ letsPlayButton.addEventListener('click', function() {
   playerIcon.src = currentGame.players[0].icon;
   computerIcon.src = currentGame.players[1].icon;
   hide(startScreen);
-  show(playerScoreboard, gameArea, computerScoreboard);
+  show(gameTypeSection);
+})
+
+gameTypeSection.addEventListener('click', function(event) {
+  if (event.target.closest('div').id === 'classic-game') {
+    currentGame.changeGameMode('classic');
+    hide(enhancedFighters, gameTypeSection, changeGameButton);
+    show(gameArea, computerScoreboard, playerScoreboard);
+  } else if (event.target.closest('div').id === 'enhanced-game') {
+    currentGame.changeGameMode('enhanced');
+    hide(gameTypeSection, changeGameButton);
+    show(gameArea, computerScoreboard, playerScoreboard, enhancedFighters);
+  }
 })
 
 fighterSection.addEventListener('click', function(event) {
   currentGame.updateChoices(event.target.id);
-  winnerMessage = currentGame.determineWinner();
-  gameMessage.innerText = winnerMessage;
+  gameMessage.innerText = currentGame.determineWinner();
   updateScore();
   displayWin();
   show(changeGameButton);
@@ -65,18 +75,6 @@ fighterSection.addEventListener('click', function(event) {
 })
 
 changeGameButton.addEventListener('click', showStartSection);
-
-gameTypeSection.addEventListener('click', function(event) {
-  if (event.target.closest('div').id === 'classic-game') {
-    currentGame.changeGameMode('classic');
-    hide(enhancedFighters, gameTypeSection);
-    show(gameArea, computerScoreboard, playerScoreboard);
-  } else if (event.target.closest('div').id === 'enhanced-game') {
-    currentGame.changeGameMode('enhanced');
-    hide(gameTypeSection);
-    show(gameArea, computerScoreboard, playerScoreboard, enhancedFighters);
-  }
-})
 
 //Main Script
 function hide(...elements) {
@@ -91,48 +89,6 @@ function show(...elements) {
   }
 }
 
-function displayWin() {
-  hide(fighterSection);
-  show(choicesSection);
-  for (var i = 0; i < 2; i++) {
-    for (var j = 0; j < fightersList.length; j++) {
-      if (currentGame.players[i].choice === fightersList[j].id) {
-        var img = document.createElement('img');
-        img.src = fightersList[j].src;
-        highlightWinner(img, i);
-        choicesSection.appendChild(img);
-      }
-    }
-  }
-}
-
-function highlightWinner(element, index) {
-  if (winnerMessage.includes('You') && index === 0) {
-    element.classList.add('winner', 'choice');
-  } else if (winnerMessage.includes('Computer') && index === 1) {
-    element.classList.add('winner', 'choice');
-  } else if (winnerMessage.includes('tie')){
-    element.classList.add('choice');
-    return;
-  } else { element.classList.add('loser', 'choice') }
-}
-
-function updateScore() {
-  playerScore.innerText = currentGame.players[0].score;
-  computerScore.innerText = currentGame.players[1].score;
-}
-
-function resetGameDisplay() {
-  show(fighterSection);
-  hide(choicesSection);
-  gameMessage.innerText = 'Choose your fighter!';
-}
-
-function showStartSection() {
-  hide(gameArea, computerScoreboard, playerScoreboard);
-  show(gameTypeSection);
-}
-
 function populateIconChoices() {
   for (var i = 0; i < currentGame.playerIcons.length; i++) {
     appendImage('icon-choice', iconChoices, currentGame.playerIcons[i])
@@ -144,4 +100,47 @@ function appendImage(className, parent, src) {
   img.src = src;
   img.classList.add(className);
   parent.appendChild(img);
+  if (parent === choicesSection) {
+    img.classList.add('choice');
+  }
+}
+
+function showStartSection() {
+  hide(gameArea, computerScoreboard, playerScoreboard);
+  show(gameTypeSection);
+}
+
+function displayWin() {
+  hide(fighterSection);
+  show(choicesSection);
+  choicesSection.innerHTML = '';
+  //Because we already know the position of each player, use a single for loop and two if statements
+  for (var i = 0; i < 2; i++) {
+    for (var j = 0; j < fightersList.length; j++) {
+      if (currentGame.players[i].choice === fightersList[j].id) {
+        highlightWinner(choicesSection, fightersList[j].src, i);
+      }
+    }
+  }
+}
+
+function highlightWinner(parent, src, index) {
+  if (currentGame.winner === 'human' && index === 0) {
+    appendImage('winner', parent, src);
+  } else if (currentGame.winner === 'computer' && index === 1) {
+    appendImage('winner', parent, src);
+  } else if (currentGame.winner === '') {
+    appendImage(null, parent, src);
+  } else { appendImage('loser', parent, src); }
+}
+
+function updateScore() {
+  playerScore.innerText = currentGame.players[0].score;
+  computerScore.innerText = currentGame.players[1].score;
+}
+
+function resetGameDisplay() {
+  show(fighterSection);
+  hide(choicesSection);
+  gameMessage.innerText = 'Choose your fighter!';
 }

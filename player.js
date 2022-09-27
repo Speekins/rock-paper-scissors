@@ -1,12 +1,13 @@
+//In main js script write code so that the new game instance is created when the lets play button is clicked
 class Player {
   constructor(name) {
     this.name = name;
     this.score = 0;
-    this.fighters = ['rock', 'paper', 'scissors'];
+    this.fighters;
     this.choice;
     this.icon;
     this.computerIcons = ['./assets/wall-e.webp', './assets/robot.png', './assets/c3po.png'];
-    if (this.name === 'computer'.toLowerCase()) {
+    if (this.name === 'computer') {
       this.icon = this.assignRandomIcon();
     };
   }
