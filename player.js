@@ -1,6 +1,6 @@
 class Player {
-  constructor(name, icon) {
-    this.name = name || 'player';
+  constructor(name) {
+    this.name = name;
     this.score = 0;
     this.fighters = ['rock', 'paper', 'scissors'];
     this.choice;
@@ -21,6 +21,11 @@ class Player {
     return this.computerIcons[randomIndex]; 
   }
 
+  updatePlayerInfo(name, src) {
+    this.name = name;
+    this.icon = src;
+  }
+
   updateChoice(choice) {
     if (this.name !== 'computer') {
       this.choice = choice;
@@ -29,5 +34,3 @@ class Player {
     }
   }
 }
-
-// module.exports = Player;

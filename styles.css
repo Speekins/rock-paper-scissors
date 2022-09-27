@@ -10,23 +10,121 @@ main {
   background-color: #f0788c;
 }
 
+.start-screen {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  font-size: 40px;
+}
+
+.start-screen h1 {
+  font-size: 60px;
+}
+
+.start-screen h2 {
+  font-size: 40px;
+}
+
+.enter-name {
+  width: 60%;
+  height: auto;
+  font-size: 40px;
+  border-radius: 15px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.icon-choices {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: auto;
+}
+
+.icon-choice {
+  height: 125px;
+  width: auto;
+  margin: 10px;
+  transition-duration: 300ms;
+}
+
+.icon-choice:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.name-warning {
+  color: red;
+  font-size: 20px;
+}
+
+.lets-play {
+  width: 20%;
+  height: auto;
+  font-size: 30px;
+  border: none;
+  border-radius: 15px;
+  transition-duration: 300ms;
+  margin-top: 25px;
+  background-color: #f14562;
+  color: black;
+}
+
+.lets-play:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  box-shadow: 5px 5px 10px black;
+}
+
 .game-type-section {
   grid-column-start: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: gold;
+}
+
+.game-type-section h1 {
+  display: inline;
+  width: 100%;
+  text-align: center;
+  font-size: 60px;
+}
+
+.game-type-section h2 {
+  font-size: 40px;
+}
+
+.game-types {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
 }
 
 .game-type {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: forestgreen;
-  width: 40%;
+  justify-content: center;
+  background-color: #f14562;
+  border-radius: 15px;
+  width: 35%;
   height: auto;
   margin: 30px;
+  transition-duration: 300ms;
+}
+
+.game-type:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  box-shadow: 5px 5px 10px black;
 }
 
 .game-area {
@@ -38,7 +136,7 @@ main {
 
 .game-area-header {
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 75px;
 }
 
 .game-area-header h1 {
@@ -73,12 +171,19 @@ main {
   margin-bottom: 15px;
 }
 
+.icon {
+  height: 200px;
+  width: auto;
+  margin-top: 20px;
+}
+
 .score-display h1 {
   transform: scale(2);
 }
 
 .change-game-button {
   width: 50%;
+  margin-top: 100px;
   padding-top: 10px;
   padding-bottom: 10px;
   border: none;
@@ -93,9 +198,28 @@ main {
 
 .fighter-section {
  display: flex;
+ flex-direction: column;
  justify-content: space-evenly;
  width: 100%;
  height: auto;
+}
+
+.all-fighters {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: auto;
+  margin: 10px auto;
+}
+
+.fighter {
+  height: 225px;
+  width: auto;
+  transition-duration: 300ms ;
+}
+
+.fighter:hover {
+  transform: scale(1.1);
 }
 
 .show-choices-section {
@@ -105,26 +229,26 @@ main {
   height: auto;
  }
 
-img {
+ .choice {
   height: 200px;
   width: auto;
-  transition-duration: 300ms ;
 }
 
-.fighter:hover {
-  transform: scale(1.1);
+.winner {
+  animation: sizeUp 2s;
+}
+
+.loser {
+  animation: fadeOut 2s;
 }
 
 .hidden {
   display: none;
 }
 
-.winner {
-  animation: sizeUp 3s;
-}
-
-.loser {
-  animation: fadeOut 3s;
+.disabled {
+  opacity: 50%;
+  pointer-events: none;
 }
 
 @keyframes fadeIn {
