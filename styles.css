@@ -9,6 +9,7 @@ main {
   width: auto;
   background-color: #f0788c;
   background-image: url('./assets/lightsaber.png');
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -152,7 +153,9 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f14562;
+  /* background-color: #f14562; */
+  background: rgb(251,6,6);
+  background: linear-gradient(45deg, rgba(251,6,6,1) 10%, rgba(32,63,246,1) 95%);
 }
 
 .computer-scoreboard {
@@ -160,7 +163,9 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f14562;
+  /* background-color: #f14562; */
+  background: rgb(251,6,6);
+  background: linear-gradient(135deg, rgba(251,6,6,1) 10%, rgba(32,63,246,1) 95%);
 }
 
 .score-display {
