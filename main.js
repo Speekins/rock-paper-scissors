@@ -1,5 +1,4 @@
-//Global Variables
-var currentGame = new Game();
+var currentGame;
 
 //Start Screen Query Selectors
 var startScreen = document.getElementById('start-screen');
@@ -29,6 +28,7 @@ var playerName = document.getElementById('player-name');
 
 //Event Listeners
 window.addEventListener('load', function() {
+  currentGame = new Game();
   populateIconChoices();
 })
 
@@ -36,10 +36,10 @@ iconChoices.addEventListener('click', function(event) {
   if (!!enterName.value) {
   letsPlayButton.disabled = false;
   letsPlayButton.classList.remove('disabled');
-  hide(nameWarning, chooseYourIcon);
   currentGame.players[0].updatePlayerInfo(enterName.value, event.target.src);
   iconChoices.innerHTML = '';
   appendImage('icon', iconChoices, currentGame.players[0].icon);
+  hide(nameWarning, chooseYourIcon);
   } else {
     show(nameWarning);
   }
@@ -114,7 +114,6 @@ function displayWin() {
   hide(fighterSection);
   show(choicesSection);
   choicesSection.innerHTML = '';
-  //Because we already know the position of each player, use a single for loop and two if statements
   for (var i = 0; i < 2; i++) {
     for (var j = 0; j < fightersList.length; j++) {
       if (currentGame.players[i].choice === fightersList[j].id) {
