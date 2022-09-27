@@ -33,6 +33,9 @@ window.addEventListener('load', function() {
 })
 
 iconChoices.addEventListener('click', function(event) {
+  if (!event.target.src) {
+    return;
+  }
   if (!!enterName.value) {
   letsPlayButton.disabled = false;
   letsPlayButton.classList.remove('disabled');
