@@ -1,4 +1,3 @@
-//In main js script write code so that the new game instance is created when the lets play button is clicked
 class Player {
   constructor(name) {
     this.name = name;
