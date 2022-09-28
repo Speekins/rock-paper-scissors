@@ -69,6 +69,9 @@ gameTypeSection.addEventListener('click', function(event) {
 })
 
 fighterSection.addEventListener('click', function(event) {
+  if (!event.target.src) {
+    return;
+  }
   currentGame.updateChoices(event.target.id);
   gameMessage.innerText = currentGame.determineWinner();
   updateScore();

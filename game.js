@@ -7,21 +7,31 @@ class Game {
       enhanced: ['alien', 'rock', 'paper', 'scissors', 'lizard']
     };
     this.playerIcons = ['./assets/beyonce.png', './assets/rambo.png', './assets/django.png', './assets/katniss.png', './assets/leonidas.png', './assets/blackpanther.png', './assets/brucelee.png', './assets/wonderwoman.png'];
+    this.winOutcomes = [
+      {rock: ['scissors', 'lizard']},
+      {paper: ['rock', 'alien']},
+      {scissors: ['paper', 'lizard']},
+      {alien: ['scissors', 'rock']},
+      {lizard: ['paper', 'alien']}
+    ]
   }
 
   determineWinner() {
     var human = this.players[0];
     var computer = this.players[1];
 
-    if ((human.choice === 'rock' && (computer.choice === 'scissors' || computer.choice === 'lizard')) ||
-    (human.choice === 'paper' && (computer.choice === 'rock' || computer.choice === 'alien')) ||
-    (human.choice === 'scissors' && (computer.choice === 'paper' || computer.choice === 'lizard')) ||
-    (human.choice === 'alien' && (computer.choice === 'scissors' || computer.choice === 'rock')) ||
-    (human.choice === 'lizard' && (computer.choice === 'paper' || computer.choice === 'alien')) ){
-      human.score += 1;
-      this.winner = 'human';
-      return 'You won!'
-    } else if (human.choice === computer.choice) {
+    for (var i = 0; i < this.winOutcomes.length; i++) {
+      var currentObject = this.winOutcomes[i];
+      for (var key in currentObject) {
+        if (key === human.choice && currentObject[key].includes(computer.choice)) {
+          human.score += 1;
+          this.winner = 'human';
+          return 'You won!'
+        }
+      }
+    }
+
+    if (human.choice === computer.choice) {
       this.winner = '';
       return 'It\'s a tie!';
     } else {
